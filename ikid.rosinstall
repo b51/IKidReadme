@@ -1,0 +1,20 @@
+- git:
+    local-name: GameControllerNode
+    uri: https://github.com/b51/GameControllerNode.git
+    version: master
+- git:
+    local-name: GoogleDepsGenerate
+    uri: https://github.com/b51/GoogleDepsGenerate.git
+    version: master
+- git:
+    local-name: PerceptionNode
+    uri: https://github.com/b51/PerceptionNode.git
+    version: master
+- git:
+    local-name: ShmNode
+    uri: https://github.com/b51/ShmNode.git
+    version: master
+- git:
+    local-name: WorldNode
+    uri: https://github.com/b51/WorldNode.git
+    version: master
