@@ -38,7 +38,11 @@
 
 * Generate GoogleDeps
 
-      cd src/GoogleDepsGenerate
+      cd src
+
+      git clone https://github.com/b51/GoogleDepsGenerate.git
+
+      cd GoogleDepsGenerate
 
       ./deps_generater.sh
 
@@ -56,29 +60,29 @@
 
   3. Modify some Options and make
 
-      `vi Makefile`
-
-      `GPU=0      ->  GPU=1`
-
-      `CUDNN=0    ->  CUDNN=1`
-
-      `OPENCV=0   ->  OPENCV=1`
-
-      `OPENMP=0   ->  OPENMP=1`
-
-      `make`
-
-      `cp libdarknet.so IKidWorkSpace/src/Perception/lib/`
+      ```
+      vi Makefile
+      GPU=0      ->  GPU=1      (If you PC has no GPU, please keep 0)
+      CUDNN=0    ->  CUDNN=1    (If your PC has no GPU, please keep 0)
+      OPENCV=0   ->  OPENCV=1
+      OPENMP=0   ->  OPENMP=1
+      make
+      cp libdarknet.so IKidWorkSpace/src/Perception/lib/
+      ```
 
 * Build and launch
 
   1. Build
 
-      `cd IKidWorkSpace`
-
-      `catkin build Perception WorldNode`
-
-      `source devel/setup.bash`
+      ```
+      cd IKidWorkSpace
+      catkin build Perception WorldNode
+      (
+        or use without GPU
+        catkin build -DUSE_GPU=OFF Perception WorldNode
+      )
+      source devel/setup.bash
+      ```
 
   2. Launch Shm.launch to init shared memory
 
